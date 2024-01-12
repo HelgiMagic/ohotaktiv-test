@@ -18,8 +18,15 @@ function GoodsPage() {
         if (goods.length > 0) return;
         const response = await axios.get(routes.goods());
 
+        console.log(response);
+
         const goodsWithIds = response.data.items.map((good) => ({ ...good, id: getUniqId() }));
-        console.log(goodsWithIds);
+
+        // добавляю заглушку
+        goodsWithIds.forEach((good) => {
+          if (good.picture === undefined) good.picture = 'https://i.pinimg.com/736x/d8/b4/a6/d8b4a61f3718b8e15dd5077c08704887.jpg';
+        });
+
         dispatch(setGoods(goodsWithIds));
       } catch (e) {
         console.log(e);
