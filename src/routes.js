@@ -1,7 +1,5 @@
-const main = 'http://react.ohotaktiv.ru:5000';
-
 const routes = {
-  goods: () => `${main}/goods`,
+  goods: () => '/goods',
 };
 
 export default routes;
