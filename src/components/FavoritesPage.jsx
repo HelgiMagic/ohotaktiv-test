@@ -13,7 +13,7 @@ function FavoritesPage() {
       <h1>Избранное</h1>
       <div className="goods-wrapper">
         {stub}
-        {favoritesElems.map((data) => <FavoriteGood data={data} />)}
+        {favoritesElems.map((data) => <FavoriteGood data={data} key={data.id} />)}
       </div>
     </>
   );

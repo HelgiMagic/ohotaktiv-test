@@ -14,7 +14,7 @@ function CartPage() {
       <h1>Корзина</h1>
       <div className="goods-wrapper">
         {stub}
-        {cartElems.map((data) => <CartGood data={data} />)}
+        {cartElems.map((data) => <CartGood data={data} key={data.id} />)}
       </div>
     </>
   );
